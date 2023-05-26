@@ -9,13 +9,13 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    @IBOutlet weak var textField1: UITextField!
-    @IBOutlet weak var textField2: UITextField!
-    @IBOutlet weak var segementedControl: UISegmentedControl!
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet private weak var textField1: UITextField!
+    @IBOutlet private weak var textField2: UITextField!
+    @IBOutlet private weak var segementedControl: UISegmentedControl!
+    @IBOutlet private weak var label: UILabel!
     
     
-    @IBAction func tapButton(_ sender: Any) {
+    @IBAction private func tapButton(_ sender: Any) {
         let number1 = Int(textField1.text ?? "") ?? 0
         let number2 = Int(textField2.text ?? "") ?? 0
         
@@ -33,7 +33,7 @@ class ViewController: UIViewController {
                 label.text =  String(number1 / number2)
             }
         default:
-            break // do noting
+            fatalError("selectedSegmentIndex is invalid.")
         }
     }
 }
